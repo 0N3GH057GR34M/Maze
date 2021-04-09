@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Maze.Models;
 
 namespace Maze
@@ -8,8 +9,9 @@ namespace Maze
         public static Point Current { get; set; }
         public static Point[,] Ground { get; set; }
         public static int Size { get; set; }
-        
         public static Point Destination { get; set; }
+        public static List<Point[]> Ways { get; set; }
+        
 
         public static void Print()
         {
@@ -100,6 +102,15 @@ namespace Maze
                         Current = Ground[Current.X, Current.Y + 1];
                     }
                     break;
+            }
+        }
+
+        public static void PathFinder()
+        {
+            Ways.Add(new [] {Current});
+            while (true)
+            {
+                
             }
         }
     }
